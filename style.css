@@ -416,341 +416,68 @@ footer h3 {
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  /* Typography Mobile */
+/* Typography */
   h1 {
     font-size: 1.2rem;
   }
-  
+
   h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
   }
-  
+
   #about-me h2 {
     margin-bottom: 2rem;
   }
-  
+
   h3 {
     font-size: 1.3rem;
   }
 
-  /* Section Spacing Mobile */
+  /* Section spacing */
   section {
     margin-top: 80px;
     padding: 0;
   }
-  
-  /* About me section goes edge to edge on mobile */
-  #about-me {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    width: 100vw !important;
-    margin-left: calc(-50vw + 50%) !important;
-    margin-right: calc(-50vw + 50%) !important;
-  }
-  
-  /* About container goes full width */
-  #about-me .about-container {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  
-  /* Reset images to normal within the full-width container */
-  #about-me .about-container img {
-    width: 100% !important;
-    margin: 0 auto 1rem auto !important;
-    max-width: 100% !important;
-    border-radius: 12px !important;
-  }
-  
-  /* Text gets proper padding within full-width container */
-  #about-me .about-container p {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  
-  /* Other sections get standard padding */
-  #projects, #graphic-design, #community {
+
+  /* Standard padding for most sections */
+  #projects,
+  #graphic-design,
+  #community {
     padding: 0 1rem;
   }
-  
-  /* About Section Mobile - Full Width */
-  .about-container {
+
+  /* About Me Section - Full Width Layout */
+  #about-me {
+    padding: 0 1rem;
+    margin: 0;
+    column-gap: 2rem;
+  }
+
+  #about-me .about-container {
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 2rem;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-bottom: 2rem;
-    width: 100% !important;
-    max-width: none !important;
+    width: 100%;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    max-width: none;
   }
 
-  .about-container p,
-  .about-container img {
-    width: 100%;
-    padding: 0;
-  }
-  
-  /* Ensure images always come first on mobile */
-  .about-container img {
-    order: -1;
-    height: auto;
-    margin: 0 auto 1rem auto;
-  }
-  
+  .about-container img,
   .about-container p {
-    order: 1;
-  }
-
-  /* Design Grid Mobile */
-  #design-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1rem;
-    margin: 1rem auto;
-    padding: 0 1rem;
-  }
-
-  #design-grid img {
-    height: 200px;
-  }
-
-  /* Community Grid Mobile */
-  .community-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin: 1rem auto;
-    padding: 0 1rem;
-  }
-
-  .community-card {
-    padding: 1rem;
-  }
-
-  .community-card img {
-    height: 150px;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  /* Projects Grid Mobile */
-  .projects-grid {
-    grid-template-columns: 1fr !important;
-    grid-template-rows: auto;
-    gap: 1.5rem;
-    margin: 1rem auto;
-    padding: 0 1rem;
-  }
-
-  .project-card {
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .project-card img {
-    height: 150px;
-    width: 100%;
-    margin: 1rem auto;
-    display: block;
-    object-fit: cover;
-  }
-
-  .project-card p {
-    text-align: center;
-  }
-
-  .project-card h3 {
-    text-align: center;
-  }
-  
-  .github-link {
-    padding: 8px 12px;
-    font-size: 0.8rem;
-  }
-
-  /* General Mobile Styles */
-  img {
-    max-width: 90%;
-  }
-  
-  /* Footer Mobile */
-  footer {
-    padding: 1rem;
-    margin-top: 2rem;
-  }
-  
-  .contact h3 {
-    font-size: 1.2rem;
-  }
-  
-  .contact h4 {
-    font-size: 1rem;
-  }
-  
-  .socials a {
-    font-size: 20px;
-  }
-}
-
-/* ==========================================================================
-   RESPONSIVE DESIGN
-   ========================================================================== */
-
-/* ----------- Desktop Specific (769px+) ----------- */
-@media screen and (min-width: 769px) {
-  .hamburger {
-    display: none !important;
-  }
-  
-  .nav-menu {
-    display: flex !important;
-    position: static !important;
-    flex-direction: row !important;
-    background: none !important;
-    width: auto !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin-right: 40px !important;
-  }
-}
-
-/* ----------- Mobile Responsive (768px and below) ----------- */
-@media (max-width: 768px) {
-  /* Header & Navigation */
-  .hamburger {
-    display: flex;
-    margin-right: 30px;
-  }
-  
-  .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 60px;
-    flex-direction: column;
-    background-color: #F5F7FA;
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0,0,0,0.05);
-    padding: 20px 0;
-  }
-  
-  .nav-menu.active {
-    left: 0;
-  }
-  
-  .nav-link {
-    display: block;
-    margin: 10px 0;
-    font-size: 18px;
-  }
-  
-  /* Hamburger Animation */
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  
-  .hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  /* Typography Mobile */
-  h1 {
-    font-size: 1.2rem;
-  }
-  
-  h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Extra gap for about me h2 */
-  #about-me h2 {
-    margin-bottom: 2rem;
-  }
-  
-  h3 {
-    font-size: 1.3rem;
-  }
-
-  /* Section Spacing Mobile */
-  section {
-    margin-top: 80px;
-    padding: 0;
-  }
-  
-  /* About me section goes edge to edge on mobile */
-  #about-me {
-  padding: 0 1rem;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1000px;
-  }
-
-  
-  /* About container goes full width */
-  #about-me .about-container {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  
-  /* Reset images to normal within the full-width container */
-  #about-me .about-container img {
-    width: 100% !important;
-    margin: 0 auto 1rem auto !important;
-    max-width: 100% !important;
-    border-radius: 12px !important;
-    order: -1;
-  }
-
-  
-  /* Other sections get standard padding */
-  #projects, #graphic-design, #community {
-    padding: 0 1rem;
-  }
-  
-  /* About Section Mobile - Full Width */
-  .about-container {
-  flex-direction: column;
-  gap: 2rem;
-  margin: 0 auto;
-  padding: 0;
-  width: 100%;
-  max-width: 1000px;
-}
-
-  .about-container p,
-  .about-container img {
     width: 100%;
     padding: 0;
+    margin: 0 auto 1rem auto;
   }
-  
-  /* Ensure images always come first on mobile */
+
   .about-container img {
     order: -1;
     height: auto;
-    margin: 0 auto 1rem auto;
+    border-radius: 12px;
   }
-  
+
   .about-container p {
     order: 1;
   }
