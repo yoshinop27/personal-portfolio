@@ -425,12 +425,18 @@ img {
     margin-bottom: 1rem;
   }
   
+  /* Extra gap for about me h2 */
+  #about-me h2 {
+    margin-bottom: 2rem;
+  }
+  
   h3 {
     font-size: 1.3rem;
   }
   
   /* About section mobile */
   .about-container {
+    display: flex;
     flex-direction: column;
     text-align: center;
     gap: 2rem;
@@ -446,14 +452,9 @@ img {
   }
   
   /* Ensure images always come first on mobile */
-  .about-container {
-    display: flex;
-    flex-direction: column;
-  }
   
   .about-container img {
     order: -1;
-    max-width: 85%;
     height: auto;
     margin: 0 auto 1rem auto;
   }
