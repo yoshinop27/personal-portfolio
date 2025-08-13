@@ -449,20 +449,20 @@ footer h3 {
 
   /* About Me Section - Full Width Layout */
   #about-me {
-    padding: 0 1rem;
-    margin: 0;
+    padding: 0 1rem !important;
+    margin: 0 !important;
     column-gap: 2rem;
   }
 
-  #about-me .about-container {
+  .about-container {
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 2rem;
     width: 100%;
-    margin: 0 0 2rem 0;
-    padding: 0;
-    max-width: none;
+    margin: 0 0 2rem 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
   }
 
   .about-container img,
