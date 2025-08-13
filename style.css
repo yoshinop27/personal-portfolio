@@ -431,23 +431,40 @@ img {
   
   /* About section mobile */
   .about-container {
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
-    gap: 1.5rem;
-    margin: 1rem auto;
-    padding: 1rem;
-    margin-bottom: 50px;
+    gap: 2rem;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    margin-bottom: 3rem;
   }
 
   .about-container p,
   .about-container img {
     width: 100%;
-    padding: 10px;
+    padding: 0;
+  }
+  
+  /* Ensure images always come first on mobile */
+  .about-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .about-container img {
+    order: -1;
+    max-width: 85%;
+    height: auto;
+    margin: 0 auto 1rem auto;
+  }
+  
+  .about-container p {
+    order: 1;
   }
 
   /* Design grid mobile */
   #design-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 1rem;
     margin: 1rem auto;
     padding: 0 1rem;
@@ -477,7 +494,7 @@ img {
 
   /* Projects grid mobile */
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     grid-template-rows: auto;
     gap: 1.5rem;
     margin: 1rem auto;
