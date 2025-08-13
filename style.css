@@ -77,6 +77,7 @@ header {
 @media screen and (max-width: 768px) {
   .hamburger {
     display: flex;
+    margin-right: 10px;
   }
   
   .nav-menu {
@@ -204,13 +205,6 @@ h2 {
   margin-bottom: 100px;
 }
 
-.design-text {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 1rem;
-  text-align: center;
-}
-
 /* ----------- Image Styling ----------- */
 
 img {
@@ -259,7 +253,7 @@ img {
   padding: 1rem;
 }
 
-.community-intro {
+.page-intro {
   max-width: 1000px;
   margin: 1rem auto;
   padding: 1rem;
@@ -371,19 +365,21 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #333;
-  color: white;
+  background-color: #E8ECF0;
+  color: #525761;
   text-decoration: none;
   padding: 10px 15px;
   border-radius: 5px;
   margin-top: 1rem;
   font-size: 0.9rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .github-link:hover {
-  background-color: #0066cc;
+  background-color: #D1D9E0;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .github-link i {
@@ -410,7 +406,7 @@ img {
   
   /* About section mobile */
   .about-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
     gap: 1.5rem;
     margin: 1rem auto;
