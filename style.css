@@ -302,6 +302,29 @@ img {
   font-size: 1rem;
 }
 
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.github-link:hover {
+  background-color: #0066cc;
+  transform: translateY(-2px);
+}
+
+.github-link i {
+  font-size: 16px;
+}
+
 /* ----------- Responsive Behavior ----------- */
 
 @media (max-width: 768px) {
