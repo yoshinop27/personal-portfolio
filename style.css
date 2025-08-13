@@ -13,7 +13,7 @@
 }
 
 body {
-  padding-top: 100px; /* for fixed header + consistent spacing */
+  padding-top: 100px;
   font-family: sans-serif;
   background-color: #F5F7FA;
   text-align: center;
@@ -21,8 +21,8 @@ body {
 
 /* ----------- Typography ----------- */
 h1, h2, h3, h4, a {
-    font-family: Georgia;
-    color: #525761;
+  font-family: Georgia;
+  color: #525761;
 }
 
 h1 {
@@ -42,17 +42,58 @@ h3 {
 }
 
 p {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
-    font-size: 1.2rem;
-    color: #6B7280;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  font-size: 1.2rem;
+  color: #6B7280;
+}
+
+/* ----------- Shared Utility Classes ----------- */
+.container-base,
+.about-container,
+#current .about-container,
+.page-intro,
+#projects,
+#graphic-design div:first-of-type,
+#community {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.card-base,
+.project-card,
+.community-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card-hover:hover,
+.project-card:hover,
+.community-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.grid-base,
+.projects-grid,
+.community-grid {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 1rem auto;
+  padding: 1rem;
 }
 
 /* ----------- Header & Navigation ----------- */
 header {
+  position: fixed;
   top: 0;
   left: 0;
-  position: fixed;
   width: 100%;
   height: 60px;
   background-color: #F5F7FA;
@@ -73,7 +114,6 @@ header {
   margin-right: auto;
 }
 
-/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -92,7 +132,6 @@ header {
   transition: 0.3s;
 }
 
-/* Navigation */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -118,7 +157,7 @@ header {
   padding-top: 40px;
 }
 
-/* ----------- General Image Styling ----------- */
+/* ----------- Images ----------- */
 img {
   max-width: 100%;
   max-height: 600px;
@@ -137,86 +176,38 @@ img {
   justify-content: space-between;
   align-items: center;
   gap: 2.8rem;
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 1rem;
   flex-wrap: nowrap;
   margin-bottom: 100px;
 }
 
-.about-container > *:first-child {
-  width: 50%;
-  flex-shrink: 0;
-}
-
-.about-container > *:last-child {
-  width: 50%;
-  flex-shrink: 0;
-}
-
-/* Current section styling to match about */
-#current .about-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 1rem;
-  flex-wrap: nowrap;
-}
-
-#current .about-container > *:first-child {
-  width: 50%;
-  flex-shrink: 0;
-}
-
+.about-container > *:first-child,
+.about-container > *:last-child,
+#current .about-container > *:first-child,
 #current .about-container > *:last-child {
   width: 50%;
   flex-shrink: 0;
 }
 
-/* ----------- Page Intro Section ----------- */
+/* ----------- Page Intro ----------- */
 .page-intro {
-  max-width: 1000px;
-  margin: 1rem auto;
-  padding: 1rem;
   text-align: center;
   margin-bottom: 3rem;
 }
 
 /* ----------- Projects Section ----------- */
 #projects {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 1rem;
   margin-bottom: 100px;
 }
 
 .projects-grid {
-  display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 2.5rem;
-  max-width: 1000px;
   margin: 3rem auto;
-  padding: 1rem;
 }
 
 .project-card {
-  background: #f8f9fa;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
   display: flex;
   flex-direction: column;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .project-card h3 {
@@ -232,7 +223,6 @@ img {
   margin: 1rem auto;
   border-radius: 8px;
   flex-shrink: 0;
-  display: block;
 }
 
 .project-card p {
@@ -243,7 +233,7 @@ img {
   font-size: 1rem;
 }
 
-/* GitHub Links */
+/* ----------- GitHub Links ----------- */
 .github-link {
   display: inline-flex;
   align-items: center;
@@ -271,19 +261,13 @@ img {
 
 /* ----------- Graphic Design Section ----------- */
 #graphic-design div:first-of-type {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 1rem;
   margin-bottom: 100px;
 }
 
 #design-grid {
-  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  max-width: 1000px;
   margin: 3rem auto;
-  padding: 1rem;
 }
 
 #design-grid img {
@@ -302,33 +286,8 @@ img {
 }
 
 /* ----------- Community Section ----------- */
-#community {
-  max-width: 1000px;
-  margin: 1rem auto;
-  padding: 1rem;
-}
-
 .community-grid {
-  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  max-width: 1000px;
-  margin: 1rem auto;
-  padding: 1rem;
-}
-
-.community-card {
-  background: #f8f9fa;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-}
-
-.community-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .community-card h3 {
@@ -343,7 +302,6 @@ img {
   object-fit: cover;
   margin: 1rem auto;
   border-radius: 8px;
-  display: block;
 }
 
 .community-card p {
@@ -468,7 +426,6 @@ footer h3 {
     margin-bottom: 1rem;
   }
   
-  /* Extra gap for about me h2 */
   #about-me h2 {
     margin-bottom: 2rem;
   }
@@ -539,6 +496,247 @@ footer h3 {
     width: 100% !important;
     max-width: none !important;
   }
+
+  .about-container p,
+  .about-container img {
+    width: 100%;
+    padding: 0;
+  }
+  
+  /* Ensure images always come first on mobile */
+  .about-container img {
+    order: -1;
+    height: auto;
+    margin: 0 auto 1rem auto;
+  }
+  
+  .about-container p {
+    order: 1;
+  }
+
+  /* Design Grid Mobile */
+  #design-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+
+  #design-grid img {
+    height: 200px;
+  }
+
+  /* Community Grid Mobile */
+  .community-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+
+  .community-card {
+    padding: 1rem;
+  }
+
+  .community-card img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* Projects Grid Mobile */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto;
+    gap: 1.5rem;
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .project-card img {
+    height: 150px;
+    width: 100%;
+    margin: 1rem auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .project-card p {
+    text-align: center;
+  }
+
+  .project-card h3 {
+    text-align: center;
+  }
+  
+  .github-link {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  /* General Mobile Styles */
+  img {
+    max-width: 90%;
+  }
+  
+  /* Footer Mobile */
+  footer {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .contact h3 {
+    font-size: 1.2rem;
+  }
+  
+  .contact h4 {
+    font-size: 1rem;
+  }
+  
+  .socials a {
+    font-size: 20px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* ----------- Desktop Specific (769px+) ----------- */
+@media screen and (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+  
+  .nav-menu {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row !important;
+    background: none !important;
+    width: auto !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-right: 40px !important;
+  }
+}
+
+/* ----------- Mobile Responsive (768px and below) ----------- */
+@media (max-width: 768px) {
+  /* Header & Navigation */
+  .hamburger {
+    display: flex;
+    margin-right: 30px;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    flex-direction: column;
+    background-color: #F5F7FA;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+    padding: 20px 0;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .nav-link {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  /* Hamburger Animation */
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Typography Mobile */
+  h1 {
+    font-size: 1.2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Extra gap for about me h2 */
+  #about-me h2 {
+    margin-bottom: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Section Spacing Mobile */
+  section {
+    margin-top: 80px;
+    padding: 0;
+  }
+  
+  /* About me section goes edge to edge on mobile */
+  #about-me {
+  padding: 0 1rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  }
+
+  
+  /* About container goes full width */
+  #about-me .about-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Reset images to normal within the full-width container */
+  #about-me .about-container img {
+    width: 100% !important;
+    margin: 0 auto 1rem auto !important;
+    max-width: 100% !important;
+    border-radius: 12px !important;
+    order: -1;
+  }
+
+  
+  /* Other sections get standard padding */
+  #projects, #graphic-design, #community {
+    padding: 0 1rem;
+  }
+  
+  /* About Section Mobile - Full Width */
+  .about-container {
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 1000px;
+}
 
   .about-container p,
   .about-container img {
