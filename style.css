@@ -447,9 +447,10 @@ footer h3 {
     padding: 0 1rem;
   }
 
-  /* About Me Section - Full Width Layout */
-  #about-me {
-    padding: 0 1rem !important;
+  /* About Me & Current Section - Full Width Layout */
+  #about-me,
+  #current {
+    padding: 0 0.5rem !important;
     margin: 0 !important;
     column-gap: 2rem;
   }
@@ -458,7 +459,7 @@ footer h3 {
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: 2rem;
+    gap: 1.5rem;
     width: 100%;
     margin: 0 0 2rem 0 !important;
     padding: 0 !important;
@@ -476,6 +477,8 @@ footer h3 {
     order: -1;
     height: auto;
     border-radius: 12px;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
   .about-container p {
