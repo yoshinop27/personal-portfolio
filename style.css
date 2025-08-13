@@ -483,18 +483,37 @@ footer h3 {
     padding: 0;
   }
   
-  /* About me section gets no side padding - text edge to edge */
+  /* About me section goes edge to edge on mobile */
   #about-me {
     padding-left: 0 !important;
     padding-right: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
   }
   
-  /* Remove side padding from about container elements */
-  #about-me .about-container,
-  #about-me .about-container p,
+  /* About container goes full width */
+  #about-me .about-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Reset images to normal within the full-width container */
   #about-me .about-container img {
+    width: 100% !important;
+    margin: 0 auto 1rem auto !important;
+    max-width: 100% !important;
+    border-radius: 12px !important;
+  }
+  
+  /* Text gets proper padding within full-width container */
+  #about-me .about-container p {
     padding-left: 0 !important;
     padding-right: 0 !important;
     margin-left: 0 !important;
@@ -506,7 +525,7 @@ footer h3 {
     padding: 0 1rem;
   }
   
-  /* About Section Mobile */
+  /* About Section Mobile - Full Width */
   .about-container {
     display: flex;
     flex-direction: column;
@@ -517,6 +536,8 @@ footer h3 {
     padding-left: 0 !important;
     padding-right: 0 !important;
     margin-bottom: 3rem;
+    width: 100% !important;
+    max-width: none !important;
   }
 
   .about-container p,
