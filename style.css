@@ -1,7 +1,11 @@
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+/* ==========================================================================
+   PERSONAL PORTFOLIO - PRESTON YOSHINO
+   ========================================================================== */
+
+/* ----------- Font Imports ----------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans&display=swap');
 
 /* ----------- Reset & Base Styles ----------- */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,8 +19,36 @@ body {
   text-align: center;
 }
 
-/* ----------- Header ----------- */
+/* ----------- Typography ----------- */
+h1, h2, h3, h4, a {
+    font-family: Georgia;
+    color: #525761;
+}
 
+h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+h2 {
+  text-align: center;
+  margin: 60px 0 20px;
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    color: #6B7280;
+}
+
+/* ----------- Header & Navigation ----------- */
 header {
   top: 0;
   left: 0;
@@ -80,70 +112,26 @@ header {
   color: #0066cc;
 }
 
-/* Desktop: Show nav, hide hamburger */
-@media screen and (min-width: 769px) {
-  .hamburger {
-    display: none !important;
-  }
-  
-  .nav-menu {
-    display: flex !important;
-    position: static !important;
-    flex-direction: row !important;
-    background: none !important;
-    width: auto !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin-right: 40px !important;
-  }
+/* ----------- Section Layout ----------- */
+#about-me, #projects, #graphic-design, #community, #current {
+  margin-top: 0;
+  padding-top: 40px;
 }
 
-/* Mobile Styles */
-@media screen and (max-width: 768px) {
-  .hamburger {
-    display: flex;
-    margin-right: 30px;
-  }
-  
-  .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 60px;
-    flex-direction: column;
-    background-color: #F5F7FA;
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0,0,0,0.05);
-    padding: 20px 0;
-  }
-  
-  .nav-menu.active {
-    left: 0;
-  }
-  
-  .nav-link {
-    display: block;
-    margin: 10px 0;
-    font-size: 18px;
-  }
-  
-  /* Hamburger Animation */
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  
-  .hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
+/* ----------- General Image Styling ----------- */
+img {
+  max-width: 100%;
+  max-height: 600px;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
-/* ----------- About & Current Sections ----------- */
-
+/* ----------- About Section ----------- */
 .about-container {
   display: flex;
   justify-content: space-between;
@@ -166,7 +154,7 @@ header {
   flex-shrink: 0;
 }
 
-/* For current section to match */
+/* Current section styling to match about */
 #current .about-container {
   display: flex;
   justify-content: space-between;
@@ -188,96 +176,7 @@ header {
   flex-shrink: 0;
 }
 
-/* Text Styles */
-
-h1, h2, h3, h4, a {
-    font-family: Georgia;
-    color: #525761;
-}
-
-h1 {
-  font-size: 1.5rem;
-  margin: 0;
-  white-space: nowrap;
-}
-
-p {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
-    font-size: 1.2rem;
-    color: #6B7280;
-}
-
-h2 {
-  text-align: center;
-  margin: 60px 0 20px;
-  font-size: 2rem;
-}
-
-/* ----------- Main Section Spacing ----------- */
-
-#about-me, #projects, #graphic-design, #community, #current {
-  margin-top: 0;
-  padding-top: 40px;
-}
-
-/* ----------- Design Section Styling ----------- */
-
-#graphic-design div:first-of-type {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 1rem;
-  margin-bottom: 100px;
-}
-
-/* ----------- Image Styling ----------- */
-
-img {
-  max-width: 100%;
-  max-height: 600px;
-  width: auto;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: block;
-  margin: 0 auto;
-  object-fit: contain;
-}
-
-/* ----------- Design Grid Styling ----------- */
-
-#design-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 3rem auto;
-  padding: 1rem;
-}
-
-#design-grid img {
-  width: 100%;
-  height: 750px;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-#design-grid img:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-/* ----------- Community Section Styling ----------- */
-
-#community {
-  max-width: 1000px;
-  margin: 1rem auto;
-  padding: 1rem;
-}
-
+/* ----------- Page Intro Section ----------- */
 .page-intro {
   max-width: 1000px;
   margin: 1rem auto;
@@ -286,51 +185,7 @@ img {
   margin-bottom: 3rem;
 }
 
-.community-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  max-width: 1000px;
-  margin: 1rem auto;
-  padding: 1rem;
-}
-
-.community-card {
-  background: #f8f9fa;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-}
-
-.community-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.community-card h3 {
-  margin-bottom: 1rem;
-  color: #333;
-  font-size: 1.5rem;
-}
-
-.community-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  margin: 1rem auto;
-  border-radius: 8px;
-  display: block;
-}
-
-.community-card p {
-  line-height: 1.6;
-  margin-top: 1rem;
-}
-
-/* ----------- Projects Section Styling ----------- */
-
+/* ----------- Projects Section ----------- */
 #projects {
   max-width: 1000px;
   margin: 2rem auto;
@@ -388,6 +243,7 @@ img {
   font-size: 1rem;
 }
 
+/* GitHub Links */
 .github-link {
   display: inline-flex;
   align-items: center;
@@ -413,152 +269,89 @@ img {
   font-size: 16px;
 }
 
-/* ----------- Responsive Behavior ----------- */
-
-@media (max-width: 768px) {
-  /* Header condensed styles already defined above */
-  
-  h1 {
-    font-size: 1.2rem;
-  }
-  
-  h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Extra gap for about me h2 */
-  #about-me h2 {
-    margin-bottom: 2rem;
-  }
-  
-  h3 {
-    font-size: 1.3rem;
-  }
-  
-  /* About section mobile */
-  .about-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 3rem;
-  }
-
-  .about-container p,
-  .about-container img {
-    width: 100%;
-    padding: 0;
-  }
-  
-  /* Ensure images always come first on mobile */
-  
-  .about-container img {
-    order: -1;
-    height: auto;
-    margin: 0 auto 1rem auto;
-  }
-  
-  .about-container p {
-    order: 1;
-  }
-
-  /* Design grid mobile */
-  #design-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1rem;
-    margin: 1rem auto;
-    padding: 0 1rem;
-  }
-
-  #design-grid img {
-    height: 200px;
-  }
-
-  /* Community grid mobile */
-  .community-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin: 1rem auto;
-    padding: 0 1rem;
-  }
-
-  .community-card {
-    padding: 1rem;
-  }
-
-  .community-card img {
-    height: 150px;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  /* Projects grid mobile */
-  .projects-grid {
-    grid-template-columns: 1fr !important;
-    grid-template-rows: auto;
-    gap: 1.5rem;
-    margin: 1rem auto;
-    padding: 0 1rem;
-  }
-
-  .project-card {
-    padding: 1rem;
-  }
-
-  .project-card img {
-    height: 150px;
-  }
-  
-  .github-link {
-    padding: 8px 12px;
-    font-size: 0.8rem;
-  }
-
-  /* General mobile styles */
-  img {
-    max-width: 90%;
-  }
-  
-  /* Sections spacing */
-  section {
-    margin-top: 80px;
-    padding: 0;
-  }
-  
-  /* About me section gets minimal padding */
-  #about-me {
-    padding: 0 0.5rem;
-  }
-  
-  /* Other sections get standard padding */
-  #projects, #graphic-design, #community {
-    padding: 0 1rem;
-  }
-  
-  /* Footer mobile */
-  footer {
-    padding: 1rem;
-    margin-top: 2rem;
-  }
-  
-  .contact h3 {
-    font-size: 1.2rem;
-  }
-  
-  .contact h4 {
-    font-size: 1rem;
-  }
-  
-  .socials a {
-    font-size: 20px;
-  }
+/* ----------- Graphic Design Section ----------- */
+#graphic-design div:first-of-type {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+  margin-bottom: 100px;
 }
 
-/* ----------- Footer Bar ----------- */
+#design-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 1rem;
+}
 
+#design-grid img {
+  width: 100%;
+  height: 750px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+#design-grid img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ----------- Community Section ----------- */
+#community {
+  max-width: 1000px;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.community-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.community-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.community-card h3 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.community-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin: 1rem auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.community-card p {
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+/* ----------- Footer ----------- */
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -597,4 +390,237 @@ footer h3 {
 .socials a:hover {
   color: #0066cc;
   transform: scale(1.1);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* ----------- Desktop Specific (769px+) ----------- */
+@media screen and (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+  
+  .nav-menu {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row !important;
+    background: none !important;
+    width: auto !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-right: 40px !important;
+  }
+}
+
+/* ----------- Mobile Responsive (768px and below) ----------- */
+@media (max-width: 768px) {
+  /* Header & Navigation */
+  .hamburger {
+    display: flex;
+    margin-right: 30px;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    flex-direction: column;
+    background-color: #F5F7FA;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+    padding: 20px 0;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .nav-link {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  /* Hamburger Animation */
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Typography Mobile */
+  h1 {
+    font-size: 1.2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Extra gap for about me h2 */
+  #about-me h2 {
+    margin-bottom: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Section Spacing Mobile */
+  section {
+    margin-top: 80px;
+    padding: 0;
+  }
+  
+  /* About me section gets no side padding - text edge to edge */
+  #about-me {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Remove side padding from about container elements */
+  #about-me .about-container,
+  #about-me .about-container p,
+  #about-me .about-container img {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Other sections get standard padding */
+  #projects, #graphic-design, #community {
+    padding: 0 1rem;
+  }
+  
+  /* About Section Mobile */
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-bottom: 3rem;
+  }
+
+  .about-container p,
+  .about-container img {
+    width: 100%;
+    padding: 0;
+  }
+  
+  /* Ensure images always come first on mobile */
+  .about-container img {
+    order: -1;
+    height: auto;
+    margin: 0 auto 1rem auto;
+  }
+  
+  .about-container p {
+    order: 1;
+  }
+
+  /* Design Grid Mobile */
+  #design-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+
+  #design-grid img {
+    height: 200px;
+  }
+
+  /* Community Grid Mobile */
+  .community-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+
+  .community-card {
+    padding: 1rem;
+  }
+
+  .community-card img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* Projects Grid Mobile */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto;
+    gap: 1.5rem;
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .project-card img {
+    height: 150px;
+    width: 100%;
+    margin: 1rem auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .project-card p {
+    text-align: center;
+  }
+
+  .project-card h3 {
+    text-align: center;
+  }
+  
+  .github-link {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  /* General Mobile Styles */
+  img {
+    max-width: 90%;
+  }
+  
+  /* Footer Mobile */
+  footer {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .contact h3 {
+    font-size: 1.2rem;
+  }
+  
+  .contact h4 {
+    font-size: 1rem;
+  }
+  
+  .socials a {
+    font-size: 20px;
+  }
 }
