@@ -177,7 +177,7 @@ img {
   align-items: center;
   gap: 2.8rem;
   flex-wrap: nowrap;
-  margin-bottom: 100px;
+  margin-bottom: 2rem;
 }
 
 .about-container > *:first-child,
@@ -492,7 +492,7 @@ footer h3 {
     margin-right: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     width: 100% !important;
     max-width: none !important;
   }
