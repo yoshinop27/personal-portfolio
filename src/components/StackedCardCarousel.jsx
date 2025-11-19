@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function StackedCardCarousel({ items, cardType = 'activity' }) {
+function StackedCardCarousel({ items = [], cardType = 'activity' }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [touchStart, setTouchStart] = useState(null)
   const [touchEnd, setTouchEnd] = useState(null)
@@ -43,8 +43,14 @@ function StackedCardCarousel({ items, cardType = 'activity' }) {
     }
   }
 
+  if (!items.length) {
+    return null
+  }
+
+  const currentItem = items[currentIndex]
+
   return (
-    <div className="stacked-carousel-wrapper">
+    <div className="carousel-wrapper">
       <button 
         className="carousel-arrow carousel-arrow-left" 
         onClick={goToPrev}
@@ -54,106 +60,65 @@ function StackedCardCarousel({ items, cardType = 'activity' }) {
       </button>
       
       <div 
-        className="stacked-cards-container"
+        className="carousel-card-container"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-        {items.map((item, index) => {
-          const position = index - currentIndex
-          const isActive = index === currentIndex
-          const isBehind = position < 0
-          const isAhead = position > 0
-          const zIndex = items.length - Math.abs(position)
+        <div className={`carousel-card glass-card ${cardType}-card hover-card`}>
+          {cardType === 'activity' && (
+            <>
+              <div className="activity-image-wrapper">
+                <img src={currentItem.image} alt={currentItem.title} className="activity-image" />
+              </div>
+              <div className="activity-content">
+                <h3 className="activity-title">{currentItem.title}</h3>
+                <p className="activity-company">{currentItem.company}</p>
+                <p className="text-slate-400">{currentItem.description}</p>
+              </div>
+            </>
+          )}
           
-          // Calculate transform for stacked effect with smooth transitions
-          let translateX = 0
-          let translateY = 0
-          let scale = 1
-          
-          if (isBehind) {
-            // Cards behind (to the left) - stack behind
-            translateX = position * 15
-            translateY = Math.abs(position) * 20
-            scale = 1 - Math.abs(position) * 0.08
-          } else if (isAhead) {
-            // Cards ahead (to the right) - stack in front but offset
-            translateX = position * 15
-            translateY = -Math.abs(position) * 10
-            scale = 1 - Math.abs(position) * 0.08
-          }
-          
-          return (
-            <div
-              key={item.id}
-              className={`stacked-card glass-card ${cardType}-card hover-card ${isActive ? 'active' : ''}`}
-              style={{
-                zIndex: zIndex,
-                transform: isActive 
-                  ? 'translateX(0) translateY(0) scale(1)' 
-                  : `translateX(${translateX}px) translateY(${translateY}px) scale(${scale})`,
-                opacity: isActive ? 1 : Math.max(0.3, 0.8 - Math.abs(position) * 0.15),
-                cursor: isActive ? 'default' : 'pointer',
-                pointerEvents: isActive ? 'auto' : 'none',
-                transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease, z-index 0.6s ease'
-              }}
-              onClick={() => !isActive && setCurrentIndex(index)}
-            >
-              {cardType === 'activity' && (
-                <>
-                  <div className="activity-image-wrapper">
-                    <img src={item.image} alt={item.title} className="activity-image" />
+          {cardType === 'project' && (
+            <>
+              <div className="project-image-wrapper">
+                <img src={currentItem.image} alt={currentItem.title} className="project-image" />
+              </div>
+              <div className="project-content">
+                <h3 className="project-title">{currentItem.title}</h3>
+                <p className="text-slate-400 project-description">{currentItem.description}</p>
+                {currentItem.tech && (
+                  <div className="project-tech">
+                    {currentItem.tech.map((tech, idx) => (
+                      <span key={idx} className="tech-tag">{tech}</span>
+                    ))}
                   </div>
-                  <div className="activity-content">
-                    <h3 className="activity-title">{item.title}</h3>
-                    <p className="activity-company">{item.company}</p>
-                    <p className="text-slate-400">{item.description}</p>
+                )}
+                {currentItem.links && (
+                  <div className="project-links">
+                    {currentItem.links.map((link, idx) => (
+                      <a 
+                        key={idx}
+                        href={link.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className={link.comingSoon ? "project-link coming-soon" : "project-link"}
+                      >
+                        <i className={link.icon}></i> {link.text}
+                      </a>
+                    ))}
                   </div>
-                </>
-              )}
-              
-              {cardType === 'project' && (
-                <>
-                  <div className="project-image-wrapper">
-                    <img src={item.image} alt={item.title} className="project-image" />
-                  </div>
-                  <div className="project-content">
-                    <h3 className="project-title">{item.title}</h3>
-                    <p className="text-slate-400 project-description">{item.description}</p>
-                    {item.tech && (
-                      <div className="project-tech">
-                        {item.tech.map((tech, idx) => (
-                          <span key={idx} className="tech-tag">{tech}</span>
-                        ))}
-                      </div>
-                    )}
-                    {item.links && (
-                      <div className="project-links">
-                        {item.links.map((link, idx) => (
-                          <a 
-                            key={idx}
-                            href={link.url} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className={link.comingSoon ? "project-link coming-soon" : "project-link"}
-                          >
-                            <i className={link.icon}></i> {link.text}
-                          </a>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </>
-              )}
+                )}
+              </div>
+            </>
+          )}
 
-              {cardType === 'design' && (
-                <div className="design-image-wrapper-full">
-                  <img src={item.image} alt={item.title || 'Design'} className="design-image-full" />
-                </div>
-              )}
+          {cardType === 'design' && (
+            <div className="design-image-wrapper-full">
+              <img src={currentItem.image} alt={currentItem.title || 'Design'} className="design-image-full" />
             </div>
-          )
-        })}
+          )}
+        </div>
       </div>
 
       <button 

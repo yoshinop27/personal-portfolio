@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import StackedCardCarousel from './StackedCardCarousel'
 
 const activities = [
@@ -7,21 +6,21 @@ const activities = [
     image: 'photos/johndeere.jpg',
     title: 'Software Engineer',
     company: 'John Deere',
-    description: 'Creating web apps to provide solutions to internal customers using TypeScript, React, Next.js, SQL with a focus on test-driven development'
+    description: 'Developing web apps on an agile team to provide solutions to internal customers using TypeScript, React, Next.js, and SQL with a focus on test-driven development'
   },
   {
     id: 2,
     image: 'photos/iowa.png',
     title: 'Research Assistant',
     company: 'University of Iowa',
-    description: 'Researching GRPO algorithm in the context of reinforcement learning in the AI training process'
+    description: 'Researching the efficacy of GRPO algorithms in the context of reinforcement learning in the AI training process. Supervised by Professor Muchao Ye.'
   },
   {
     id: 3,
     image: 'photos/baseball.jpg',
-    title: 'Varsity Athlete',
+    title: 'Baseball Season',
     company: 'Grinnell College Baseball',
-    description: '3rd year middle infielder competing at the collegiate level'
+    description: 'Heading into my 3rd year season as a middle infielder for the Grinnell College Baseball team, participating in the midwest conference.'
   }
 ]
 
