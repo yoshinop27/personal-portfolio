@@ -12,7 +12,18 @@ function Header() {
   return (
     <header>
       <div id="top-bar">
-        <h1 onClick={() => handleNavClick('about')}>Preston Yoshino</h1>
+        <div className="identity">
+          <img src="photos/headshot.jpeg" alt="Preston Yoshino" className="avatar" />
+          <div>
+            <h1 onClick={() => handleNavClick('about')}>Preston Yoshino</h1>
+            <p className="grad-line">Grinnell College — B.A. Math, CS, Statistics — Spring 2027</p>
+            <div className="quick-links">
+              <a href="https://github.com/yoshinop27" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://linkedin.com/in/preston-yoshino27" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            </div>
+          </div>
+        </div>
         <nav className="nav-menu">
           <a href="#about" className="nav-link" onClick={(e) => { e.preventDefault(); handleNavClick('about') }}>About</a>
           <a href="#news" className="nav-link" onClick={(e) => { e.preventDefault(); handleNavClick('news') }}>News</a>

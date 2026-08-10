@@ -5,6 +5,13 @@ function NewsSection() {
         <h2 className="section-heading">News</h2>
         <div className="entry-list">
           <div>
+            <div className="entry-date">May 2026</div>
+            <h3 className="entry-title">Midwest Conference Champions</h3>
+            <p>
+              Won the Midwest Conference (MWC) championship as a member of the Grinnell College baseball team.
+            </p>
+          </div>
+          <div>
             <div className="entry-date">November 2025</div>
             <h3 className="entry-title">TigerHacks Hackathon Winner</h3>
             <p>

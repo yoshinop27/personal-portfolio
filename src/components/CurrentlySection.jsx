@@ -1,18 +1,24 @@
 const activities = [
   {
     id: 1,
-    title: 'Software Engineer',
-    company: 'John Deere',
-    description: 'Developing web apps on an agile team to provide solutions to internal customers using TypeScript, React, Next.js, and SQL with a focus on test-driven development.'
+    title: 'Software Engineering Intern',
+    company: 'IBM, New York',
+    description: 'Building agentic systems to analyze IBM performance workloads.'
   },
   {
     id: 2,
     title: 'Research Assistant',
     company: 'University of Iowa',
-    description: 'Researching the efficacy of GRPO algorithms in the context of reinforcement learning in the AI training process. Supervised by Professor Muchao Ye.'
+    description: "Researching the efficacy of GRPO algorithms in the context of reinforcement learning in the AI training process, currently exploring using standard deviation and accuracy to dynamically adjust temperature. Supervised by Professor Muchao Ye."
   },
   {
     id: 3,
+    title: 'Summer Coursework',
+    company: 'Cultural Anthropology & Deep Learning',
+    description: 'Taking a cultural anthropology course alongside a deep learning summer school course.'
+  },
+  {
+    id: 4,
     title: 'Baseball Season',
     company: 'Grinnell College Baseball',
     description: 'Heading into my 3rd year season as a middle infielder for the Grinnell College Baseball team, participating in the midwest conference.'
