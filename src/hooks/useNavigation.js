@@ -5,7 +5,7 @@ export function useNavigation() {
     let activeSection = 'about'
 
     const updateActiveSection = () => {
-      const sections = ['about', 'news', 'currently', 'projects', 'design', 'community']
+      const sections = ['about', 'news', 'currently', 'projects', 'community']
       const scrollPosition = window.scrollY + window.innerHeight / 2
       const headerHeight = 60
 
