@@ -16,7 +16,7 @@ function Header() {
           <img src="photos/headshot.jpeg" alt="Preston Yoshino" className="avatar" />
           <div>
             <h1 onClick={() => handleNavClick('about')}>Preston Yoshino</h1>
-            <p className="grad-line">Grinnell College — B.A. Math, CS, Statistics — Spring 2027</p>
+            <p className="grad-line">Grinnell College — B.A. Math, CS, Statistics</p>
             <div className="quick-links">
               <a href="https://github.com/yoshinop27" target="_blank" rel="noopener noreferrer">GitHub</a>
               <a href="https://linkedin.com/in/preston-yoshino27" target="_blank" rel="noopener noreferrer">LinkedIn</a>
